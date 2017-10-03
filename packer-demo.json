@@ -13,13 +13,7 @@
     "ssh_username": "ubuntu",
     "ami_name": "packer-nodejs-demo {{timestamp}}"
   }],
-  "provisioners": [
-  {
-    "type": "file",
-    "source": "app",
-    "destination": "/tmp/app"
-  },
-  {
+  "provisioners": [{
     "type": "shell",
     "scripts": [  "scripts/deploy.sh"   ],
     "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
